@@ -1,0 +1,168 @@
+{
+  "name": "api-loader",
+  "version": "0.0.1",
+  "description": "Easy API endpoint management",
+  "author": "Andy Mpanda",
+  "contributors": [
+    {
+      "name": "Andy Mpanda",
+      "email" : "code@mistersomebody.com",
+      "url": "https://github.com/mistersomebody"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/api-loader/api-loader.git"
+  },
+  "main": "index.js",
+  "keywords": [
+    "api",
+    "endpoint",
+    "server",
+    "loading"
+  ],
+  "scripts": {
+    "lint": "eslint . --fix --ignore-pattern /test/coverage/ --ignore-pattern /docs",
+    "posttest": "eslint . --ignore-pattern /test/coverage/ --ignore-pattern /docs",
+    "posttest:cover": "eslint . --ignore-pattern /test/coverage/ --ignore-pattern /docs",
+    "test": "jest /test",
+    "test:cover": "jest /test --coverage",
+    "test:server": "node ./test"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "express": "^4.16.4",
+    "jest": "^23.1.0"
+  },
+  "jest": {
+    "verbose": true,
+    "coverageReporters": [
+      "html"
+    ],
+    "coverageDirectory": "./test/coverage",
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "**/*.{js}",
+      "!**/node_modules/**",
+      "!**/test/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/",
+      "/docs/",
+      "/adapter/"
+    ],
+    "modulePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ],
+      "brace-style": [
+        "error",
+        "stroustrup"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "array-bracket-spacing": [
+        "error",
+        "always"
+      ],
+      "computed-property-spacing": [
+        "error",
+        "always"
+      ],
+      "spaced-comment": [
+        "error",
+        "always"
+      ],
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "block-spacing": [
+        "error",
+        "always"
+      ],
+      "space-before-function-paren": [
+        "error",
+        "always"
+      ],
+      "space-before-blocks": [
+        "error",
+        "always"
+      ],
+      "no-else-return": [
+        "error",
+        {}
+      ],
+      "no-return-await": [
+        "error"
+      ],
+      "no-return-assign": [
+        "error",
+        "except-parens"
+      ],
+      "require-await": [
+        "error"
+      ],
+      "keyword-spacing": [
+        "error"
+      ],
+      "key-spacing": [
+        "error"
+      ],
+      "no-trailing-spaces": [
+        "error"
+      ],
+      "space-in-parens": [
+        "error",
+        "never"
+      ],
+      "comma-spacing": [
+        "error"
+      ],
+      "comma-dangle": [
+        "error"
+      ],
+      "space-infix-ops": [
+        "error"
+      ],
+      "switch-colon-spacing": [
+        "error"
+      ],
+      "rest-spread-spacing": [
+        "error"
+      ],
+      "template-curly-spacing": [
+        "error",
+        "always"
+      ]
+    }
+  }
+}
