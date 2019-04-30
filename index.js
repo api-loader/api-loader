@@ -73,11 +73,11 @@ async function api (server, opt = {}) {
       adapter = Adaptr
     }
 
-    if (adapter.init instanceof AsyncFunction) {
-      await adapter.init(server, defaults, opt)
+    if (adapter.before instanceof AsyncFunction) {
+      await adapter.before(server, defaults, opt)
     }
-    else if (adapter.init instanceof Function) {
-      adapter.init(server, defaults, opt)
+    else if (adapter.before instanceof Function) {
+      adapter.before(server, defaults, opt)
     }
   }
 
@@ -144,11 +144,11 @@ async function api (server, opt = {}) {
   loaded.forEach(items => routes.push(...items))
 
   if (adapter) {
-    if (adapter.set instanceof AsyncFunction) {
-      await adapter.set(server, defaults, opt)
+    if (adapter.after instanceof AsyncFunction) {
+      await adapter.after(server, defaults, opt)
     }
-    else if (adapter.set instanceof Function) {
-      adapter.set(server, defaults, opt)
+    else if (adapter.after instanceof Function) {
+      adapter.after(server, defaults, opt)
     }
   }
 
